@@ -25,13 +25,13 @@ export default function App() {
     const getData = () => {
 
         // TODO: Adapt based on the url of your project
-        fetch(config.API_URL + '?id=' + String(selectedUser), {})
+        fetch(config.API_URL + '?userId=' + String(selectedUser), {})
             .then((response) => response.json())
             .then((responseData) => {
                 // TODO: Adapt based on the format of your response object
-                console.log('Recommendations: ', responseData['id']);
+                console.log('Recommendations: ', responseData['recommendations']);
                 // @ts-ignore
-                setRecommendations(responseData['id']);
+                setRecommendations(responseData['recommendations']);
                 // const recommendations = [34, 32, 893, 1];
 
                 setStep(1);
